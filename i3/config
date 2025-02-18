@@ -1,0 +1,21 @@
+# Main modification key = windows key
+set $mod Mod4
+
+include font.conf
+include keyboard_mouse.conf
+include sound.conf
+include terminal.conf
+include rofi.conf
+include keybinds.conf
+include tiling.conf
+include workspaces.conf
+include brightness.conf
+include notifications.conf
+include screenshot.conf
+include polybar.conf
+include background.conf
+
+## Default settings that I chose to keep
+# Start XDG autostart .desktop files using dex. See also
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex --autostart --environment i3
