@@ -1,0 +1,10 @@
+# vim: ft=zsh
+# This file is managed my chezmoi. Do not edit ~/.zshrc directly.
+# Instead, edit files in `chezmoi cd` and use `chezmoi apply`.
+
+export EDITOR="${EDITOR:-nvim}"
+ZSH_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME}/.config/zsh"
+
+[[ -r "$ZSH_CONFIG_DIR/base.zsh" ]] && source "$ZSH_CONFIG_DIR/base.zsh"
+[[ "$OSTYPE" == darwin* ]] && [[ -r "$ZSH_CONFIG_DIR/macos.zsh" ]] && source "$ZSH_CONFIG_DIR/macos.zsh"
+[[ "$OSTYPE" == linux* ]] && [[ -r "$ZSH_CONFIG_DIR/linux.zsh" ]] && source "$ZSH_CONFIG_DIR/linux.zsh"

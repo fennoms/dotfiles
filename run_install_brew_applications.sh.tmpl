@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# vim: set ft=bash :
+set -euo pipefail
+
+if [[ "{{ .chezmoi.os }}" != "darwin" ]]; then
+  exit 0
+fi
+
+if ! command -v brew >/dev/null 2>&1; then
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+echo "⌛Installing Brewfile packages..."
+
+brew bundle --file="$HOME/.Brewfile"
+
+echo "✅ Brewfile packages installed."
+
